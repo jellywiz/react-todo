@@ -1,7 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import TodoContainer from './TodoContainer';
+import TodoContainer from './components/TodoContainer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<TodoContainer />);
+root.render(
+  <React.StrictMode>
+    <TodoContainer />
+  </React.StrictMode>,
+);
