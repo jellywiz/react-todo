@@ -5,7 +5,7 @@ import TodosItem from "./TodosItem";
 class TodosList extends React.Component {
   render() {
     return (
-      <div>
+      <div className="list-todo">
         {this.props.todos.map(todo => (
           <TodosItem
             key={todo.id}

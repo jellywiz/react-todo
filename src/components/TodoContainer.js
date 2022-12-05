@@ -1,6 +1,5 @@
 /* eslint-disable */
 import React from 'react';
-import './TodoContainer.css';
 import TodosList from './TodosList'
 import Header from "./Header";
 import InputTodo from "./InputTodo";
