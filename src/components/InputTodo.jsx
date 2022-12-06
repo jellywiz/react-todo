@@ -1,37 +1,35 @@
-/* eslint-disable */
-import React, { Component } from "react";
+/* eslint-disable react/button-has-type */
+import React, { useState } from 'react';
 
-class InputTodo extends Component {
-  state = {
-    title: ""
+// eslint-disable-next-line react/prop-types
+function InputTodo({ addTodoProps }) {
+  const [title, setTitle] = useState('');
+  const onChange = (e) => {
+    setTitle((e.target.name = e.target.value));
   };
-  onChange = e => {
-    this.setState({
-      [e.target.name]: e.target.value
-    });
-  };
-
-  handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    this.props.addTodoProps(this.state.title);
-    this.setState({
-      title: ""
-    });
+    if (title.trim()) {
+      addTodoProps(title);
+      setTitle('');
+    } else {
+      // eslint-disable-next-line no-alert
+      alert('Please write item');
+    }
   };
-  render() {
-    return (
-      <form onSubmit={this.handleSubmit} className="form-container">
-        <input
-          type="text"
-          className="input-text"
-          placeholder="Add todo..."
-          value={this.state.title}
-          name="title"
-          onChange={this.onChange}
-        />
-        <input type="submit" className="input-submit" value="Submit" />
-      </form>
-    );
-  }
+  return (
+    <form onSubmit={handleSubmit} className="form-container">
+      <input
+        type="text"
+        placeholder="Add Todo..."
+        className="input-text"
+        name="title"
+        value={title}
+        onChange={onChange}
+      />
+      <button className="input-submit">submit</button>
+    </form>
+  );
 }
+
 export default InputTodo;
