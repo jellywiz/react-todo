@@ -1,22 +1,19 @@
-/* eslint-disable */
-import React from "react";
-import TodosItem from "./TodosItem";
+/* eslint-disable react/prop-types */
+import TodoItem from './TodoItem';
 
-class TodosList extends React.Component {
-  render() {
-    return (
-      <div className="list-todo">
-        {this.props.todos.map(todo => (
-          <TodosItem
-            key={todo.id}
-            todo={todo}
-            handleChangeProps={this.props.handleChangeProps}
-            deleteTodoProps={this.props.deleteTodoProps}
-          />
-        ))}
-      </div>
-    );
-  }
+function TodosList({ todos, handlePropsChange, deleteTodo }) {
+  return (
+    <ul>
+      {todos.map((todo) => (
+        <TodoItem
+          key={todo.id}
+          todo={todo}
+          handlePropsChange={handlePropsChange}
+          deleteTodo={deleteTodo}
+        />
+      ))}
+    </ul>
+  );
 }
 
 export default TodosList;

@@ -1,21 +1,19 @@
-/* eslint-disable */
-import React from "react";
-
-const Header = () => {
-  const headerStyle = {
-    padding: "20px 0",
-    lineHeight: "2em"
-  };
+function Header() {
   return (
-    <header style={headerStyle}>
-      <h1 style={{ fontSize: "25px", marginBottom: "15px" }}>
-        Simple Todo App
-      </h1>
-      <p style={{ fontSize: "19px" }}>
-        Please add to-dos item(s) through the input field
-      </p>
+    <header
+      style={{
+        fontSize: '6rem',
+        fontWeight: '600',
+        marginBottom: '2rem',
+        lineHeight: '1em',
+        color: '#ececec',
+        textTransform: 'lowercase',
+        textAlign: 'center',
+      }}
+    >
+      <h1>todos</h1>
     </header>
   );
-};
+}
 
 export default Header;
